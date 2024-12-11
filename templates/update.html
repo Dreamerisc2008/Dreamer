@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar tarea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Actualización de tarea</h1>
+    <form method="post">
+        <label for="task">Tarea:</label>
+        <input type="text" id="task" name="task" value="{{ task.task }}" required><br>
+        <label for="time">Hora:</label>
+        <input type="text" id="time" name="time" value="{{ task.time }}" required><br>
+        <label for="responsible">Responsable:</label>
+        <input type="text" id="responsible" name="responsible" value="{{ task.responsible }}" required><br>
+        <button type="submit">Actualizar tarea</button>
+    </form>
+
+    <!-- Botón regresar -->
+    <div class="boton-regresar">
+        <a href="{{ url_for('index') }}">
+            <button type="button">Regresar al menú principal</button>
+        </a>
+    </div>
+</body>
+</html>
